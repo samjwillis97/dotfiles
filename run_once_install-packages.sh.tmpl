@@ -3,7 +3,12 @@
 {{ if eq .chezmoi.osRelease.id "debian" -}}
 #!/bin/sh
 
-sudo apt install vim tmux zsh curl
+sudo apt install vim tmux zsh curl git
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
 {{ end -}}
 
 {{ end -}}

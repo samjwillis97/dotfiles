@@ -227,6 +227,8 @@ Plug 'dracula/vim', {'as':'dracula'}
 Plug 'stevearc/vim-arduino'
 " VimDevIcons
 Plug 'ryanoasis/vim-devicons'
+" TMUX
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 colorscheme dracula
