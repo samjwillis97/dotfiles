@@ -13,6 +13,9 @@ let $RTP=split(&runtimepath, ',')[0]
 " Set VIMRC
 let $RC="$HOME/.vim/vimrc"
 
+" CHEZMOI
+autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
+
 inoremap jk <Esc>
 
 " COLORS
