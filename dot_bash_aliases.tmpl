@@ -15,11 +15,12 @@ alias untar='tar -zxvf'
 alias python='python3'
 alias pip='pip3'
 
+{{- if eq .chezmoi.hostname "debian-xps-9550"}}
 gsettings set org.gnome.gnome-flashback desktop false
 
 export GOPATH=$HOME/Go
-
 export PATH="$GOPATH:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+{{- end}}
 
