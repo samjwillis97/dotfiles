@@ -1,0 +1,9 @@
+{{ if eq .chezmoi.os "linux" -}}
+
+{{ if eq .chezmoi.osRelease.id "debian" -}}
+#!/bin/sh
+
+sudo apt install vim tmux zsh curl
+{{ end -}}
+
+{{ end -}}
