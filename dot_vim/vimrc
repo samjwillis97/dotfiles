@@ -234,6 +234,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'christoomey/vim-tmux-navigator'
 " Vim Surround
 Plug 'tpope/vim-surround'
+" Vim Go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
 call plug#end()
 
 colorscheme dracula
