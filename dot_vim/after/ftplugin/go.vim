@@ -10,6 +10,12 @@ set noexpandtab
 set autoindent
 set smartindent
 
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc.vim
+filetype plugin indent on
+syntax on
+
 " User-defined command for running gofmt on select lines (default all)
 :command! -buffer -range=% Gofmt let b:winview = winsaveview() |
   \ silent! execute <line1> . "," . <line2> . "!gofmt " | 
