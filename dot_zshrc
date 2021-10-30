@@ -83,6 +83,9 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(
   git
   pass
+  docker-compose
+  docker
+  cp
   colored-man-pages
   zsh-syntax-highlighting
   zsh-autosuggestions
