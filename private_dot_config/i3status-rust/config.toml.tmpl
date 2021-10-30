@@ -33,16 +33,20 @@ block = "load"
 interval = 1
 format = "{1m}"
 
+{{ if eq .chezmoi.hostname "debian-xps" -}}
 [[block]]
 block="backlight"
+{{ end -}}
 
 [[block]]
 block = "sound"
 
+{{ if eq .chezmoi.hostname "debian-xps" -}}
 [[block]]
 block="battery"
 interval = 10
 format = "{percentage}  {time}"
+{{ end -}}
 
 [[block]]
 block = "time"
