@@ -58,6 +58,8 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
+bindsym Print exec flameshot gui
+
 # Start Rofi
 {{ if eq .chezmoi.hostname "debian-desktop" -}}
 bindsym $mod+d exec --no-startup-id rofi -show drun
