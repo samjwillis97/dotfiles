@@ -23,5 +23,14 @@ export PATH="$GOPATH:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+{{- else if eq .chezmoi.hostname "debian-desktop"}}
+gsettings set org.gnome.gnome-flashback desktop false
+
+export GOPATH=$HOME/go
+export PATH="$GOPATH:$PATH"
+export PATH="$GOPATH/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 {{- end}}
+
 
