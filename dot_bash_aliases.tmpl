@@ -20,6 +20,8 @@ gsettings set org.gnome.gnome-flashback desktop false
 export GOPATH=$HOME/Go
 {{- else if eq .chezmoi.hostname "debian-desktop"}}
 export GOPATH=$HOME/go
+{{- else if eq .chezmoi.hostname "AMP-6537"}}
+export GOPATH=$HOME/go
 {{- end}}
 
 
