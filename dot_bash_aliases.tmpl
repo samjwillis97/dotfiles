@@ -22,6 +22,7 @@ export GOPATH=$HOME/Go
 export GOPATH=$HOME/go
 {{- else if eq .chezmoi.hostname "AMP-6537"}}
 export GOPATH=$HOME/go
+export PATH="/usr/local/go:$PATH"
 {{- end}}
 
 
