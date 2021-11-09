@@ -203,13 +203,14 @@ let g:go_highlight_structs = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_operators = 1
+let g:go_highlight_function_calls = 1
 let g:go_highlight_build_constraints = 1
 
 " Plug.vim
 call plug#begin('~/.vim/plugged')
 
 " Ale
-" Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 " AutoComplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " File Browser
@@ -221,7 +222,7 @@ Plug 'jiangmiao/auto-pairs'
 " Shows git diff in the gutter column
 Plug 'airblade/vim-gitgutter'
 " Git Plugin
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 " Easier and better commenting
 Plug 'tpope/vim-commentary'
 " Airline
@@ -230,11 +231,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Collection of language packs (syntax, indent etc)
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 " Dracula Colorscheme
 Plug 'dracula/vim', {'as':'dracula'}
 " Arduino
-Plug 'stevearc/vim-arduino'
+" Plug 'stevearc/vim-arduino'
 " VimDevIcons
 Plug 'ryanoasis/vim-devicons'
 " TMUX
