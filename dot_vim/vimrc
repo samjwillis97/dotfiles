@@ -230,7 +230,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Collection of language packs (syntax, indent etc)
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 " Dracula Colorscheme
 Plug 'dracula/vim', {'as':'dracula'}
 " Arduino
