@@ -170,7 +170,7 @@ nnoremap <leader>T :Tags<CR>
 nmap <silent> ]e <Plug>(ale_next_wrap)
 nmap <silent> [e <Plug>(ale_previous_wrap)
 
-nnoremap gd :ALEGoToDefinition
+nnoremap gd :ALEGoToDefinition<CR>
 
 " NERD TREE
 nnoremap <C-n> :NERDTreeToggle<CR>
