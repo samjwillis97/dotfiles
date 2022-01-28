@@ -3,16 +3,21 @@
 {{ if eq .chezmoi.osRelease.id "debian" "ubuntu" -}}
 #!/bin/sh
 
+# Install Essentials
 sudo apt install vim tmux zsh curl git exuberant-ctags python3 python3-pip
 
+# Install Node
 curl -fsSL https://deb.nodesource.com/setup_17.x | sudo bash -
 sudo apt-get install -y nodejs
 
+# Install Fonts
 mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts && curl -fLo "Fira Code Regular Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
 
+# Install powerline
 pip install powerline-status
 
+# Modify default git
 git config --global init.templatedir '~/.git_template'
 
 {{ end -}}
