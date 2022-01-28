@@ -33,6 +33,8 @@ run-shell "powerline-daemon -q"
 
 {{- if eq .chezmoi.hostname "tifc" "AMP-6537"}}
 source "/home/$USER/.local/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf"
+{{- else if eq .chezmoi.os "darwin"}}
+source "/home/$USER/Library/Python/3.8/lib/python/site-packages/powerline/bindings/tmux/powerline.conf"
 {{- else }}
 source "/home/$USER/.local/lib/python3.9/site-packages/powerline/bindings/tmux/powerline.conf"
 {{- end }}
