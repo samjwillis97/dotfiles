@@ -5,6 +5,7 @@ syntax on
 set number
 set hidden
 set backspace=indent,eol,start
+set re=0
 filetype plugin indent on
 
 " Set Run Time Variable to be ~/.vim
@@ -51,7 +52,6 @@ nnoremap <leader><space> :nohlsearch<CR>
 set foldenable
 set foldlevelstart=10
 set foldnestmax=10
-" nnoremap <space> za
 set foldmethod=indent
 
 " MOVEMENT
@@ -113,7 +113,6 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)"
 
 " Use K to show documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -211,36 +210,22 @@ call plug#begin('~/.vim/plugged')
 
 " Ale
 Plug 'dense-analysis/ale'
-" AutoComplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" File Browser
 Plug 'preservim/nerdtree'
-" Git Plugin for NerdTree
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" Auto-pairing brackets
 Plug 'jiangmiao/auto-pairs'
-" Shows git diff in the gutter column
 Plug 'airblade/vim-gitgutter'
-" Easier and better commenting
 Plug 'tpope/vim-commentary'
-" Airline
 Plug 'vim-airline/vim-airline'
-" FZF Search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Collection of language packs (syntax, indent etc)
 Plug 'sheerun/vim-polyglot'
-" Dracula Colorscheme
+Plug 'ryanoasis/vim-devicons'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-surround'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
 Plug 'dracula/vim', {'as':'dracula'}
 Plug 'joshdick/onedark.vim'
-" VimDevIcons
-Plug 'ryanoasis/vim-devicons'
-" TMUX
-Plug 'christoomey/vim-tmux-navigator'
-" Vim Surround
-Plug 'tpope/vim-surround'
-" Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
 
 call plug#end()
 
