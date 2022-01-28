@@ -221,8 +221,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jiangmiao/auto-pairs'
 " Shows git diff in the gutter column
 Plug 'airblade/vim-gitgutter'
-" Git Plugin
-" Plug 'tpope/vim-fugitive'
 " Easier and better commenting
 Plug 'tpope/vim-commentary'
 " Airline
@@ -234,8 +232,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 " Dracula Colorscheme
 Plug 'dracula/vim', {'as':'dracula'}
-" Arduino
-" Plug 'stevearc/vim-arduino'
+Plug 'joshdick/onedark'
 " VimDevIcons
 Plug 'ryanoasis/vim-devicons'
 " TMUX
