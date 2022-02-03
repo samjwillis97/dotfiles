@@ -233,7 +233,6 @@ Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
 Plug 'dracula/vim', {'as':'dracula'}
 Plug 'joshdick/onedark.vim'
-Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 
 call plug#end()
 
