@@ -201,7 +201,7 @@ let NERDTreeIgnore = [ '__pycache__', '\.pyc$', '\.o$', '\.swp',  '*\.swp',  'no
 let NERDTreeShowHidden=1
 let NERDTreeChDirMode=2
 
-nnoremap <C-N> :NerdTreeFind<CR>
+nnoremap <C-S-n> :NERDTreeFind<CR>
 
 set laststatus=2
 
