@@ -205,20 +205,20 @@ let NERDTreeChDirMode=2
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
-" returns true iff is NERDTree open/active
-function! rc:isNTOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+" calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
+function! s:syncTree()
+  let s:curwnum = winnr()
+  NERDTreeFind
+  exec s:curwnum . "wincmd w"
 endfunction
 
-" calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
-function! rc:syncTree()
-  if &modifiable && rc:isNTOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
+function! s:syncTreeIf()
+  if (winnr("$") > 1)
+    call s:syncTree()
   endif
 endfunction
 
-autocmd BufEnter * call rc:syncTree()
+autocmd BufEnter * call s:syncTreeIf()
 
 
 set laststatus=2
