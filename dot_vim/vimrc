@@ -213,7 +213,7 @@ endfunction
 " Highlight currently open buffer in NERDTree
 autocmd BufRead * call SyncTree()
 
-nnoremap <C-n> :NERDTreeToggle<CR>:call SyncTree()<CR><c-w>h
+nnoremap <C-n> :NERDTreeToggle<CR>:call SyncTree()<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeIgnore = [ '__pycache__', '\.pyc$', '\.o$', '\.swp',  '*\.swp',  'node_modules/' ]
 let NERDTreeShowHidden=1
