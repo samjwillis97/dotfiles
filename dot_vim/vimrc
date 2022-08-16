@@ -59,10 +59,10 @@ nnoremap j gj
 nnoremap k gk
 
 " SPLIT NAVIGATIONS
-nnoremap <C-J> <C-W><C-J>:call SyncTree()<CR>
-nnoremap <C-K> <C-W><C-K>:call SyncTree()<CR>
-nnoremap <C-L> <C-W><C-L>:call SyncTree()<CR>
-nnoremap <C-H> <C-W><C-H>:call SyncTree()<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 set splitbelow
 set splitright
@@ -195,25 +195,7 @@ nnoremap <leader>T :Tags<CR>
 
 
 " NERD TREE
-
-" Check if NERDTree is open or active
-function! IsNERDTreeOpen()
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-" file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
-
-" Highlight currently open buffer in NERDTree
-autocmd BufRead * call SyncTree()
-
-nnoremap <C-n> :NERDTreeToggle<CR>:call SyncTree()<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeIgnore = [ '__pycache__', '\.pyc$', '\.o$', '\.swp',  '*\.swp',  'node_modules/' ]
 let NERDTreeShowHidden=1
