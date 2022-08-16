@@ -201,6 +201,11 @@ let NERDTreeIgnore = [ '__pycache__', '\.pyc$', '\.o$', '\.swp',  '*\.swp',  'no
 let NERDTreeShowHidden=1
 let NERDTreeChDirMode=2
 
+" If more than one window and previous buffer was NERDTree, go back to it.
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b#
+
+let g:plug_window = 'noautocmd vertical topleft new'
+
 nmap ,n :NERDTreeFind<CR>
 
 set laststatus=2
