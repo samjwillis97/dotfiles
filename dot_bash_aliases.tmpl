@@ -24,7 +24,7 @@ export GOPATH=$HOME/go
 export GOPATH=$HOME/go
 export PATH="/usr/local/go/bin:$PATH"
 {{- else if eq .chezmoi.hostname "AMP-8060"}}
-export DISPLAY="`grep nameserver /etc/resolve.conf | sed 's/nameserver //'`:0"
+export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
 export LIBGL_ALWAYS_INDIRECT=1
 export GOPATH=$HOME/go
 {{- else }}
