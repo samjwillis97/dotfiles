@@ -23,6 +23,10 @@ export GOPATH=$HOME/go
 {{- else if eq .chezmoi.hostname "AMP-6537"}}
 export GOPATH=$HOME/go
 export PATH="/usr/local/go/bin:$PATH"
+[[- else if eq .chezmoi.hostname "AMP-8060"}}
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+export LIBGL_ALWAYS_INDIRECT=1
+export GOPATH=$HOME/go
 {{- else }}
 export GOPATH=$HOME/go
 {{- end}}
