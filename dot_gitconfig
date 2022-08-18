@@ -1,0 +1,18 @@
+[init]
+	templatedir = ~/.git_template
+[user]
+	email = sam@williscloud.org
+	name = Sam Willis
+[use]
+	nam = Sam Willis
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
