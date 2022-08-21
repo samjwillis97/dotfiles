@@ -123,8 +123,8 @@ nnoremap <silent> K :call ShowDocumentation()<CR>
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
-  " else
-  "   call feedkeys('K', 'in')
+  else
+    call feedkeys('K', 'in')
   endif
 endfunction
 
@@ -223,6 +223,8 @@ let g:go_fmt_command = "goimports"
 
  " automatically highlight variable your cursor is on
 let g:go_auto_sameids = 0
+
+let g:go_doc_keywordprg_enable = 0
 
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
