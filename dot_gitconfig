@@ -15,7 +15,6 @@
 [mergetool]
 	prompt = false
 [alias]
-	graph = log --graph --decorate --oneline
 	lg = lg1
 	lg1 = lg1-specific --all
 	lg2 = lg2-specific --all
