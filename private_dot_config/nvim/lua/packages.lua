@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
   use 'Mofiqul/dracula.nvim'
   use 'navarasu/onedark.nvim'
   -- Language Server Protocol
-  use {'neoclide/coc.nvim', branch = 'release'}
+  -- use {'neoclide/coc.nvim', branch = 'release'}
   -- TODO
   -- coc
   -- nerdtree/git
