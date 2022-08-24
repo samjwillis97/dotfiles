@@ -25,6 +25,19 @@ return require('packer').startup(function(use)
   use 'gruvbox-community/gruvbox'
   use 'Mofiqul/dracula.nvim'
   use 'navarasu/onedark.nvim'
+  -- Statuslines
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  -- File Navigation
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  } 
   -- Language Server Protocol
   -- use {'neoclide/coc.nvim', branch = 'release'}
   -- TODO
