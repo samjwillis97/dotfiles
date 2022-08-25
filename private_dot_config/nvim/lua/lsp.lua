@@ -1,7 +1,7 @@
 require("mason").setup()
 require("symbols-outline").setup()
 local cmp = require("cmp")
-local lspkind = require("lspkind").init({})
+local lspkind = require("lspkind")
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -51,6 +51,20 @@ cmp.setup({
       ['<C-e>'] = cmp.mapping.abort(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
+    formatting = {
+		format = function(entry, vim_item)
+			vim_item.kind = lspkind.presets.default[vim_item.kind]
+			local menu = source_mapping[entry.source.name]
+			if entry.source.name == "cmp_tabnine" then
+				if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+					menu = entry.completion_item.data.detail .. " " .. menu
+				end
+				vim_item.kind = ""
+			end
+			vim_item.menu = menu
+			return vim_item
+		end,
+	},
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
     }, {
