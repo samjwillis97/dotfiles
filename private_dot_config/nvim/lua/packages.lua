@@ -42,7 +42,6 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'williamboman/mason.nvim' -- Auto LSP Installs
   -- TODO
-  -- coc - LSP? AutoComplete?
   -- autopairs
   -- TMUX
   -- DAP (Debug Adapter Protocol)
