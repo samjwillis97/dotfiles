@@ -52,6 +52,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
+  use 'onsails/lspkind-nvim'
   -- Outline
   use 'simrat39/symbols-outline.nvim' -- Maybe fix some bindings?
   -- Exit vim if tree is last window

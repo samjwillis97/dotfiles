@@ -1,6 +1,7 @@
 require("mason").setup()
 require("symbols-outline").setup()
 local cmp = require("cmp")
+local lspkind = require("lspkind")
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
