@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
 	  run = ":TSUpdate"
   })
   use 'romgrk/nvim-treesitter-context' -- Shows the current function/class as float window (Not Working)
+  use 'aserowy/tmux.nvim'
   -- The VIM must haves
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
@@ -48,7 +49,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   -- Outline
-  use 'simrat39/symbols-outline.nvim'
+  use 'simrat39/symbols-outline.nvim' -- Maybe fix some bindings?
   -- TODO
   -- Exit vim if tree is last window
   -- autopairs
