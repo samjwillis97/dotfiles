@@ -14,9 +14,8 @@ return require('packer').startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   use('nvim-treesitter/nvim-treesitter', {
 	  run = ":TSUpdate"
-  }) -- What ?
-  use 'nvim-treesitter/playground' -- What?
-  use 'romgrk/nvim-treesitter-context' -- Shoes the current function/class as float window
+  })
+  use 'romgrk/nvim-treesitter-context' -- Shows the current function/class as float window (Not Working)
   -- The VIM must haves
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
@@ -40,13 +39,12 @@ return require('packer').startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   } 
   -- Language Server Protocol
-  -- use {'neoclide/coc.nvim', branch = 'release'}
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/mason.nvim' -- Auto LSP Installs
   -- TODO
   -- coc - LSP? AutoComplete?
-  -- gitgutter
   -- autopairs
-  -- git gutter
-  -- vim airline
+  -- TMUX
   -- DAP (Debug Adapter Protocol)
 
 

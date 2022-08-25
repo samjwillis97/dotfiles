@@ -47,6 +47,11 @@ vim.api.nvim_set_keymap("n", "<C-H>", "<C-W><C-H>", { noremap = true })
 ---- NVIMTree
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true})
 ---- Code Navigation
+vim.api.nvim_set_keymap("n", "<space>e", vim.diagnostic.open_float, { noremap = true })
+vim.api.nvim_set_keymap("n", "<space>q", vim.diagnostic.setloclist, { noremap = true })
+vim.api.nvim_set_keymap("n", "[d", vim.diagnostic.goto_prev, { noremap = true })
+vim.api.nvim_set_keymap("n", "]d", vim.diagnostic.goto_next, { noremap = true })
+vim.api.nvim_set_keymap("n", "<space>q", vim.diagnostic.setloclist, { noremap = true })
 
 
 -- Chezmoi
