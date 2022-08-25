@@ -53,7 +53,7 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { noremap = true })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { noremap = true })
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, { noremap = true })
 ---- Telescope
-vim.api.nvim_set_keymap("n", "<leader>ff", ":Telescope find_files<CR>", { noremape = true })
+vim.api.nvim_set_keymap("n", "<leader>ff", ":Telescope find_files<CR>", { noremap = true })
 
 
 -- Chezmoi
