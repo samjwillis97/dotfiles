@@ -65,6 +65,7 @@ vim.api.nvim_set_keymap("n", "<leader>F", ":Telescope live_grep<CR>", { noremap 
 vim.api.nvim_set_keymap("n", "<leader>b", ":Telescope buffers<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>h", ":Telescope help_tags<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>B", ":Telescope current_buffer_fuzzy_find<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>o", ":SymbolsOutline<CR>", { noremap = true })
 ---- Code Navigation + LSP
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { noremap = true })
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, { noremap = true })
