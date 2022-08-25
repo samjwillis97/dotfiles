@@ -48,6 +48,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   -- TODO
+  -- Exit vim if tree is last window
   -- autopairs
   -- TMUX
   -- DAP (Debug Adapter Protocol)
