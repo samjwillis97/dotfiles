@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
+  use 'airblade/vim-gitgutter'
   -- Colorschemes
   use 'gruvbox-community/gruvbox'
   use 'Mofiqul/dracula.nvim'
@@ -41,8 +42,8 @@ return require('packer').startup(function(use)
   -- Language Server Protocol
   -- use {'neoclide/coc.nvim', branch = 'release'}
   -- TODO
-  -- coc
-  -- nerdtree/git
+  -- coc - LSP? AutoComplete?
+  -- gitgutter
   -- autopairs
   -- git gutter
   -- vim airline
