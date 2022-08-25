@@ -1,9 +1,9 @@
 require("packages")
-require("settings")
+require("lsp")
 require("treesitter")
 require("filetree")
 require("statusline")
-require("lsp")
+require("settings")
 
 require("onedark").setup {
 	style = 'darker'
