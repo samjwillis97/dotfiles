@@ -7,8 +7,8 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     disable = {},
   },
-  ensure_installed = "all"
-  sync_install = false
+  ensure_installed = "all",
+  sync_install = false,
 }
 
 
