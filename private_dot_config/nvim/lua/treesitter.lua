@@ -7,7 +7,24 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     disable = {},
   },
-  ensure_installed = "all",
+  ensure_installed = {
+		"json",
+		"jsonc",
+		"yaml",
+		"toml",
+		"lua",
+		"go",
+		"typescript",
+		"javascript",
+		"python",
+		"rust",
+		"c_sharp",
+		"svelte",
+		"vue",
+		"css",
+		"html"
+
+  },
   sync_install = false,
 }
 
