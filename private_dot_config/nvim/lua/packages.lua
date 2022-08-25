@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
 	  run = ":TSUpdate"
   }) -- What ?
   use 'nvim-treesitter/playground' -- What?
-  use 'romgrk/nvim-treesitter-context' -- What?
+  use 'romgrk/nvim-treesitter-context' -- Shoes the current function/class as float window
   -- The VIM must haves
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
