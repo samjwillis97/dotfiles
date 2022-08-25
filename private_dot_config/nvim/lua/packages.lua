@@ -16,7 +16,11 @@ return require('packer').startup(function(use)
 	  run = ":TSUpdate"
   })
   use 'romgrk/nvim-treesitter-context' -- Shows the current function/class as float window (Not Working)
-  use 'aserowy/tmux.nvim'
+  use 'aserowy/tmux.nvim' -- FIXME
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
   -- The VIM must haves
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
@@ -53,7 +57,6 @@ return require('packer').startup(function(use)
   -- TODO
   -- Exit vim if tree is last window
   -- autopairs
-  -- TMUX
   -- DAP (Debug Adapter Protocol)
 
 
