@@ -1,7 +1,7 @@
 require("mason").setup()
 require("symbols-outline").setup()
 local cmp = require("cmp")
-local lspkind = require("lspkind")
+local lspkind = require("lspkind").init({})
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -30,6 +30,15 @@ local on_attach = function(client, bufnr)
 end
 
 cmp.setup({
+    snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      end,
+    },
     window = {
       -- completion = cmp.config.window.bordered(),
       -- documentation = cmp.config.window.bordered(),
