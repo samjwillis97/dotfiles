@@ -46,6 +46,7 @@ vim.api.nvim_set_keymap("n", "<C-L>", "<C-W><C-L>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-H>", "<C-W><C-H>", { noremap = true })
 ---- NVIMTree
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true})
+---- Code Navigation
 
 
 -- Chezmoi
