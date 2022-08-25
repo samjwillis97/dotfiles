@@ -43,13 +43,14 @@ vim.api.nvim_create_autocmd("BufWritePost",{
 
 -- Autoclose VIM if Tree is the last window
 vim.api.nvim_create_autocmd("BufEnter", {
-  nested = true,
+  group = vim.api.nvim_create_augroup("NvimTreeClose", {clear = true}),
+  pattern = "NvimTree_*",
   callback = function()
-    if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
-      vim.cmd "quit"
-    end
+    local layout = vim.api.nvim_call_function("winlayout", {})
+    if layout[1] == "leaf" and vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), "filetype") == "NvimTree" and layout[3] == nil then vim.cmd("confirm quit") end
   end
 })
+
 
 -- Reopening A File - at same line (TODO)
 
