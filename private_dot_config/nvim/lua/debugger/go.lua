@@ -1,3 +1,4 @@
+local dap = require('dap')
 -- go install github.com/go-delve/delve/cmd/dlv@latest
 
 dap.adapters.delve = {
