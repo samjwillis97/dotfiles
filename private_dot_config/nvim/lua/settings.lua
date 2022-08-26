@@ -71,12 +71,17 @@ vim.api.nvim_set_keymap("n", "<C-L>", "<C-W><C-L>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-H>", "<C-W><C-H>", { noremap = true })
 ---- NVIMTree
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true})
+vim.api.nvim_set_keymap("n", ",n", ":NvimTreeFindFile<CR>", { noremap = true})
 ---- Telescope
 vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>F", ":Telescope live_grep<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>b", ":Telescope buffers<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>h", ":Telescope help_tags<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>B", ":Telescope current_buffer_fuzzy_find<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>d", ":Telescope diagnostics<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "gd", ":Telescope lsp_definitions<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "gi", ":Telescope lsp_implementations<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>o", ":SymbolsOutline<CR>", { noremap = true })
 ---- Code Navigation + LSP
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { noremap = true })
