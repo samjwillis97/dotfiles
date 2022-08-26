@@ -9,9 +9,8 @@
 	prompt = false
 [diff]
 	tool = vimdiff
-[mergetool]
-    fugitive.cmd = vim -f -c "Gvdiffsplit!" "$MERGED"
-	prompt = false
+[mergetool "fugitive"]
+    cmd = vim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 [merge]
 	tool = fugitive 
 [alias]
