@@ -34,8 +34,8 @@ dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
 end
 
-vim.api.nvim_set_keymap("n", "<Home>", dapui.toggle(1), { noremap = true })
-vim.api.nvim_set_keymap("n", "<End>", dapui.toggle(2), { noremap = true })
+vim.api.nvim_set_keymap("n", "<Home>", dapui.open(), { noremap = true })
+vim.api.nvim_set_keymap("n", "<End>", dapui.close(), { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader><leader>", dapui.close(), { noremap = true })
 
 vim.api.nvim_set_keymap("n", "<Up>", dap.continue(), { noremap = true })
