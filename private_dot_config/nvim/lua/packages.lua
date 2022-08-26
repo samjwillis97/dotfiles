@@ -59,6 +59,7 @@ return require('packer').startup(function(use)
   -- Fancy Lines
   use 'lukas-reineke/indent-blankline.nvim'
   -- DAP (Debug Adapter Protocol)
+  use 'mfussenegger/nvim-dap'
 
 
   -- Automatically set up your configuration after cloning packer.nvim
