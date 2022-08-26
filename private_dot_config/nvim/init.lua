@@ -4,6 +4,7 @@ require("treesitter")
 require("filetree")
 require("statusline")
 require("telescope-settings")
+require("debugger")
 require("settings")
 
 require("onedark").setup {
