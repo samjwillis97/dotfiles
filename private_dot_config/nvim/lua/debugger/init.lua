@@ -24,8 +24,8 @@ dapui.setup({
         }
     },
     mappings = {
-        open = {"<Home>", "<leader>D"},
-        close = {"<End>", "<leader><leader>"},
+        open = {"<Home>"},
+        close = {"<End>"},
     },
 })
 
@@ -39,6 +39,9 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
 end
+
+vim.api.nvim_set_keymap("n", "<Leader>D", ":lua require'dap'.run()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader><Leader>", ":lua require'dap'.disconnect() require'dap'.close()<CR>", { noremap = true })
 
 vim.api.nvim_set_keymap("n", "<Up>", ":lua require'dap'.continue()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Down>", ":lua require'dap'.step_over()<CR>", { noremap = true })
