@@ -61,7 +61,7 @@ return require('packer').startup(function(use)
   use 'rcarriga/nvim-dap-ui'
   -- use 'theHamsta/nvim-dap-virtual-text'
   -- Fancy Lines
-  use 'lukas-reineke/indent-blankline.nvim'
+  -- use 'lukas-reineke/indent-blankline.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
