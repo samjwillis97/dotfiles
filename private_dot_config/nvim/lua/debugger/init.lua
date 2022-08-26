@@ -21,11 +21,15 @@ dapui.setup({
             position = "left",
         }
     },
+    mappings = {
+        open = "<Home>",
+        close = {"<End>", "<leader><leader>"},
+    },
 })
 
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
-    dapui.open(1)
+    dapui.open()
 end
 dap.listeners.before.event_terminated["dapui_config"] = function()
     dapui.close()
@@ -33,10 +37,6 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
 end
-
-vim.api.nvim_set_keymap("n", "<Home>", function() dapui.open() end, { noremap = true })
-vim.api.nvim_set_keymap("n", "<End>", dapui.close(), { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader><leader>", dapui.close(), { noremap = true })
 
 vim.api.nvim_set_keymap("n", "<Up>", dap.continue(), { noremap = true })
 vim.api.nvim_set_keymap("n", "<Down>", dap.step_over(), { noremap = true })
