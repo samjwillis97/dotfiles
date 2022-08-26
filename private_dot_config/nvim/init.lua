@@ -3,6 +3,7 @@ require("lsp")
 require("treesitter")
 require("filetree")
 require("statusline")
+require("telescope")
 require("settings")
 
 require("onedark").setup {
