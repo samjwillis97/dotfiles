@@ -10,7 +10,7 @@
 [diff]
 	tool = vimdiff
 [mergetool "fugitive"]
-    cmd = vim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+    cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 [merge]
 	tool = fugitive 
 [alias]
