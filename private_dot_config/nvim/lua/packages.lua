@@ -56,9 +56,9 @@ return require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip'
   -- Outline
   use 'simrat39/symbols-outline.nvim' -- Maybe fix some bindings?
-  -- Exit vim if tree is last window
+  -- Fancy Lines
+  use 'lukas-reineke/indent-blankline.nvim'
   -- DAP (Debug Adapter Protocol)
-
 
 
   -- Automatically set up your configuration after cloning packer.nvim
