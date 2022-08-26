@@ -56,12 +56,12 @@ return require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip'
   -- Outline
   use 'simrat39/symbols-outline.nvim' -- Maybe fix some bindings?
-  -- Fancy Lines
-  use 'lukas-reineke/indent-blankline.nvim'
   -- DAP (Debug Adapter Protocol)
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
   -- use 'theHamsta/nvim-dap-virtual-text'
+  -- Fancy Lines
+  use 'lukas-reineke/indent-blankline.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
