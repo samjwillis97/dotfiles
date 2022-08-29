@@ -97,6 +97,7 @@ vim.api.nvim_set_keymap("n", "gd", ":Telescope lsp_definitions<CR>", { noremap =
 vim.api.nvim_set_keymap("n", "gr", ":Telescope lsp_references<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "gi", ":Telescope lsp_implementations<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>o", ":SymbolsOutline<CR>", { noremap = true })
+---- LSP
 ---- Code Navigation + LSP
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { noremap = true })
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, { noremap = true })
