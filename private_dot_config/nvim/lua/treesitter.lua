@@ -22,8 +22,8 @@ require'nvim-treesitter.configs'.setup {
 		"svelte",
 		"vue",
 		"css",
-		"html"
-
+		"html",
+        "nix",
   },
   sync_install = false,
 }
