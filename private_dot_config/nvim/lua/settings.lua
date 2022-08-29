@@ -84,8 +84,8 @@ vim.api.nvim_set_keymap("n", "<C-H>", "<C-W><C-H>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", ",n", ":NvimTreeFindFile<CR>", { noremap = true})
 ---- GitSigns
-vim.api.nvim_set_keymap("n", "[g", "Gitsigns prev_hunk<CR", { noremape = true })
-vim.api.nvim_set_keymap("n", "]g", "Gitsigns next_hunk<CR", { noremape = true })
+vim.api.nvim_set_keymap("n", "[g", "Gitsigns prev_hunk<CR", { noremap = true })
+vim.api.nvim_set_keymap("n", "]g", "Gitsigns next_hunk<CR", { noremap = true })
 ---- Telescope
 vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope git_files<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>F", ":Telescope live_grep<CR>", { noremap = true })
