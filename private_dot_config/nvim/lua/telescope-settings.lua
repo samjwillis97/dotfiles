@@ -1,2 +1,2 @@
 local actions = require("telescope.actions")
-require('telescope').load_extension('fzf')
+-- require('telescope').load_extension('fzf')
