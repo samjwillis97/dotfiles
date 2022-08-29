@@ -37,11 +37,11 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- Filetype Settings
-vm.api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd("FileType", {
     pattern = "typescript",
     command = "setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2",
 })
-vm.api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd("FileType", {
     pattern = "html",
     command = "setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2",
 })
