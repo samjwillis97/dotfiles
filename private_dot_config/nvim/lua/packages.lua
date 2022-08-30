@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
   use 'aserowy/tmux.nvim' -- FIXME
   use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end }
   use {'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end}
-  use 'TimeUntersberger/neogit'
+  use 'TimUntersberger/neogit'
   -- The VIM must haves
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
