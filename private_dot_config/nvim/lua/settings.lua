@@ -19,6 +19,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
 vim.opt.lazyredraw = true -- Why?
 -- vim.opt.showmatch = true -- Why?
+vim.opt.termguicolors = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
