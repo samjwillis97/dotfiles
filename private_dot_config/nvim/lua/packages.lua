@@ -17,28 +17,6 @@ return require('packer').startup(function(use)
 	  run = ":TSUpdate"
   })
   use 'romgrk/nvim-treesitter-context' -- Shows the current function/class as float window (Not Working)
-  use ({
-        'aserowy/tmux.nvim',
-        config = function()
-        require("tmux").setup({
-                -- overwrite default configuration
-                -- here, e.g. to enable default bindings
-                copy_sync = {
-                    -- enables copy sync and overwrites all register actions to
-                    -- sync registers *, +, unnamed, and 0 till 9 from tmux in advance
-                    enable = true,
-                },
-                navigation = {
-                    -- enables default keybindings (C-hjkl) for normal mode
-                    enable_default_keybindings = true,
-                },
-                resize = {
-                    -- enables default keybindings (A-hjkl) for normal mode
-                    enable_default_keybindings = true,
-                }
-            })
-        end
-    }) 
   use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end }
   use {'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end}
   -- use 'TimUntersberger/neogit'
@@ -46,6 +24,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
+  use 'christoomey/vim-tmux-navigator'
   -- Colorschemes
   use 'gruvbox-community/gruvbox'
   use 'Mofiqul/dracula.nvim'
