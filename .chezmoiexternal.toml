@@ -22,4 +22,17 @@
 	exact = true
 	stripComponents = 1
 	refreshPeriod = "168h"
+{{ $arch := "x86_64"}}
+{{- if eq .chezmoi.arch "arm64" "armv6" "i386" "x86_64" }}
+{{ $arch := .chezmoi.arch }}
+{{- end }}
+{{ $jiraVersion := "1.1.0" -}}
+[".local/bin/jira"]
+    type = "file"
+    url = "https://github.com/ankitpokhrel/jira-cli/releases/download/v{{ $jiraVersion }}/jira_{{ $jiraVersion }}_{{ .chezmoi.os }}_{{ $arch }}.tar.gz"
+    executable = true
+    refreshPeriod = "168h"
+    [".local/bin/jira".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "jira_{{ $jiraVersion }}_{{ .chezmoi.os }}_{{ $arch }}/bin/jira"]
 
