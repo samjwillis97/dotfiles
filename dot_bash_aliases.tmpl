@@ -17,6 +17,8 @@ alias pip='pip3'
 
 alias tmux='tmux new-session -A -s default'
 
+alias count-file-watchers='find /proc/*/fd -user "$USER" -lname anon_inode:inotify -printf \'%hinfo/%f\n\' 2>/dev/null | xargs cat | grep -c \'^inotify\''
+
 {{- if eq .chezmoi.hostname "debian-xps-9550"}}
 gsettings set org.gnome.gnome-flashback desktop false
 export GOPATH=$HOME/Go
