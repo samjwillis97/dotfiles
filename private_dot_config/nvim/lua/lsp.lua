@@ -95,7 +95,7 @@ require('lspconfig')['gopls'].setup{
     flags = lsp_flags,
     capabilities = capabilities,
 }
-require('lspconfig')['golangci_lint'].setup{
+require('lspconfig')['golangci_lint_ls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
