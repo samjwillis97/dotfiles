@@ -6,6 +6,7 @@ require("statusline")
 require("telescope-settings")
 require("neogit-settings")
 require("debugger")
+-- require("format")
 require("settings")
 
 require("onedark").setup {

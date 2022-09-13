@@ -40,6 +40,8 @@ export GOPATH=$HOME/go
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+export NODE_OPTIONS="--max_old_space_size=6144 --openssl-legacy-provider"
+
 export GO111MODULE="on"
 
 export PATH="$HOME/.emacs.d/bin:$PATH"
@@ -52,5 +54,6 @@ export JIRA_API_TOKEN={{ (bitwarden "item" "ampcontrol_jira-api-token").notes }}
 
 # Jira CLI
 alias jira-current="jira sprint list --current -a$(jira me)"
+
 
 export EDITOR=nvim

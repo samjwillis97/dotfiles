@@ -25,6 +25,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
   use 'christoomey/vim-tmux-navigator'
+  -- Formatter
+  -- use 'mhartington/formatter.nvim'
   -- Colorschemes
   use 'gruvbox-community/gruvbox'
   use 'Mofiqul/dracula.nvim'
