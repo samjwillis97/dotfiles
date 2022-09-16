@@ -1,1 +1,1 @@
-git diff --diff-filter=MA --name-only $1 | xargs npx prettier
+git diff --diff-filter=MA --name-only $1 | xargs npx prettier $@
