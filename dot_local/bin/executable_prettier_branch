@@ -2,8 +2,8 @@ git_branch="$1"
 shift
 prettier_args=""
 
-for i in
-    prettier_args="${prettier_args} $i"
+for i
+    do prettier_args="${prettier_args} $i"
 done
 
 git diff --diff-filter=MA --name-only $git_branch | xargs npx prettier $prettier_args
