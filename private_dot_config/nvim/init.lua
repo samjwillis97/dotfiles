@@ -5,7 +5,7 @@ require("filetree")
 require("statusline")
 require("telescope-settings")
 require("neogit-settings")
-require("debugger")
+-- require("debugger")
 -- require("format")
 require("settings")
 
