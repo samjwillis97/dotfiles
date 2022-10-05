@@ -15,6 +15,6 @@ require("settings")
 -- require("onedark").load()
 --
 
-vim.g.catpuccin_flavour = "macchiato"
-require("catpuccin").setup()
-vim.cmd [[colorscheme catpuccin]]
+vim.g.catppuccin_flavour = "macchiato"
+require("catppuccin").setup()
+vim.cmd [[colorscheme catppuccin]]
