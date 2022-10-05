@@ -32,17 +32,15 @@ return require('packer').startup(function(use)
   use 'Mofiqul/dracula.nvim'
   use 'navarasu/onedark.nvim'
   use 'catppuccin/nvim'
+  -- Icons
+  use {'kyazdani42/nvim-web-devicons', config = function() require("nvim-web-devicons").setup { default = true; } end}
   -- Statuslines
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   -- File Navigation
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   } 
   -- Language Server Protocol
