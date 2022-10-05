@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
   use 'gruvbox-community/gruvbox'
   use 'Mofiqul/dracula.nvim'
   use 'navarasu/onedark.nvim'
+  use 'catpuccin/nvim'
   -- Statuslines
   use {
     'nvim-lualine/lualine.nvim',

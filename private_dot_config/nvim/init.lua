@@ -9,7 +9,12 @@ require("neogit-settings")
 -- require("format")
 require("settings")
 
-require("onedark").setup {
-	style = 'darker'
-}
-require("onedark").load()
+-- require("onedark").setup {
+-- 	style = 'darker'
+-- }
+-- require("onedark").load()
+--
+
+vim.g.catpuccin_flavour = "macchiato"
+require("catpuccin").setup()
+vim.cmd [[colorscheme catpuccin]]
