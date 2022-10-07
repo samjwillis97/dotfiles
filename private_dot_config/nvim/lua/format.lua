@@ -13,6 +13,7 @@ require("formatter").setup {
                 args = {},
                 stdin = true,
             }
+	    end
             -- gofumpt
             function () return {
                 exe = "gofumpt",
