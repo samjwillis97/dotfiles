@@ -7,16 +7,19 @@ local util = require "formatter.util"
 require("formatter").setup {
     filetype = {
         go = {
+            -- gofmt
+            function () return {
+                exe = "gofmt",
+                args = {},
+                stdin = true,
+            }
+            -- gofumpt
             function () return {
                 exe = "gofumpt",
-                args = {
-                },
+                args = {},
                 stdin = true,
                 } 
             end
         },
-        ["*"] = {
-            require("formatter.filetypes.any").remove_trailing_whitespace
-        }
     }
 }
