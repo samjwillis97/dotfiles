@@ -1,1 +1,2 @@
+#!/usr/bin/env bash
 echo "{\"organizationId\":null,\"folderId\":null,\"type\":2,\"name\":\"$1\",\"notes\":\"$(sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/\\\\n/g' $2)\",\"favorite\":false,\"fields\":[],\"login\":null,\"secureNote\":{\"type\":0},\"card\":null,\"identity\":null}";

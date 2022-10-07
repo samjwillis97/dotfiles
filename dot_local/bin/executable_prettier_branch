@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 git_branch="$1"
 shift
 prettier_args=""
