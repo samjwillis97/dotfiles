@@ -39,6 +39,10 @@ vim.opt.splitright = true
 
 -- Trigger autoread when files are updated externallly
 vim.opt.autoread = true
+vim.api.nvim_create_autocmd("FocusGained,BufEnter,CursorHold,CursorHoldI", {
+	pattern = "*",
+	command = "if mode() != 'c' | checktime | endif",
+})
 
 -- Filetype Settings
 vim.api.nvim_create_autocmd("FileType", {
