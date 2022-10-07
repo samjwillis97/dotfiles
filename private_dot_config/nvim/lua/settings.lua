@@ -37,36 +37,42 @@ vim.opt.foldmethod = "indent"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+-- Trigger autoread when files are updated externallly
+vim.opt.autoread = true
+
 -- Filetype Settings
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "typescript",
-    command = "setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2",
+	pattern = "typescript",
+	command = "setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2",
 })
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "html",
-    command = "setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2",
+	pattern = "html",
+	command = "setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2",
 })
 
-
 -- Chezmoi
-vim.api.nvim_create_autocmd("BufWritePost",{
+vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = "~/.local/share/chezmoi/*",
-	command = "chezmoi apply --source-path \"%\"",
+	command = 'chezmoi apply --source-path "%"',
 })
 
 -- Autoclose VIM if Tree is the last window
 vim.api.nvim_create_autocmd("BufEnter", {
-  group = vim.api.nvim_create_augroup("NvimTreeClose", {clear = true}),
-  pattern = "NvimTree_*",
-  callback = function()
-    local layout = vim.api.nvim_call_function("winlayout", {})
-    if layout[1] == "leaf" and vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), "filetype") == "NvimTree" and layout[3] == nil then vim.cmd("confirm quit") end
-  end
+	group = vim.api.nvim_create_augroup("NvimTreeClose", { clear = true }),
+	pattern = "NvimTree_*",
+	callback = function()
+		local layout = vim.api.nvim_call_function("winlayout", {})
+		if
+			layout[1] == "leaf"
+			and vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), "filetype") == "NvimTree"
+			and layout[3] == nil
+		then
+			vim.cmd("confirm quit")
+		end
+	end,
 })
 
-
 -- Reopening A File - at same line (TODO)
-
 
 -- Insert Mode Remaps
 vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true })
@@ -85,8 +91,8 @@ vim.api.nvim_set_keymap("n", "<C-H>", "<C-W><C-H>", { noremap = true })
 vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true })
 vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true })
 ---- NVIMTree
-vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true})
-vim.api.nvim_set_keymap("n", ",n", ":NvimTreeFindFile<CR>", { noremap = true})
+vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", ",n", ":NvimTreeFindFile<CR>", { noremap = true })
 ---- GitSigns
 vim.api.nvim_set_keymap("n", "[g", ":Gitsigns prev_hunk<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "]g", ":Gitsigns next_hunk<CR>", { noremap = true })
@@ -108,4 +114,3 @@ vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, { noremap = true })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { noremap = true })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { noremap = true })
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, { noremap = true })
-
