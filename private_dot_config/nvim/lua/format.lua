@@ -8,12 +8,12 @@ require("formatter").setup {
     filetype = {
         go = {
             -- gofmt
-            function () return {
-                exe = "gofmt",
-                args = {},
-                stdin = true,
-            }
-	    end
+            -- function () return {
+            --     exe = "gofmt",
+            --     args = {},
+            --     stdin = true,
+            -- }
+	    -- end
             -- gofumpt
             function () return {
                 exe = "gofumpt",
