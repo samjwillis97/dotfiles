@@ -7,7 +7,7 @@ local util = require "formatter.util"
 require("formatter").setup {
     filetype = {
         go = {
-            require("formatter.filetype.go").gofumpt
+            require("formatter.filetypes.go").gofumpt
         },
         ["*"] = {
             require("formatter.filetypes.any").remove_trailing_whitespace
