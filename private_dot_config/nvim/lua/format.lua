@@ -20,4 +20,3 @@ require("formatter").setup {
 	    }
 	}
 }
-}
