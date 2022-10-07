@@ -44,6 +44,13 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHo
 	command = "if mode() != 'c' | checktime | endif",
 })
 
+-- Remeber Cursor Position
+local cursorPosGroup = vim.api.nvim_create_augroup("remember-cursor-position", { clear = true })
+vim.api.nvim_create_autocmd("BufReadPost", {
+	pattern = "*",
+	command = 'if line("\'"") > 1 && line("\'"") <= line("$") | exe "normal! g`"" | endif',
+})
+
 -- Filetype Settings
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "typescript",
