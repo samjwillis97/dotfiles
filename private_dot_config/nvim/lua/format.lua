@@ -25,5 +25,32 @@ require("formatter").setup {
                 } 
             end
         },
+        typescript = {
+            require("formatter.filetypes.typescript").prettier
+        },
+        javascript = {
+            require("formatter.filetypes.javascript").prettier
+        },
+        svelte = {
+            require("formatter.filetypes.svelte").prettier
+        },
+        json = {
+            require("formatter.filetypes.json").prettier
+        },
+        yaml = {
+            require("formatter.filetypes.yaml").prettier
+        },
+        python = {
+            require("formatter.filetypes.python").black
+        },
+        html = {
+            require("formatter.filetypes.html").prettier
+        },
+        lua = {
+            require("formatter.filetypes.lua").stylua
+        },
+        rust = {
+            require("formatter.filetypes.rust").rustfmt
+        }
     }
 }
