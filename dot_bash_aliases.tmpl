@@ -48,7 +48,7 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
-{{- else eq .chezmoi.hostname "AMP-8060" "AMP-7050"}}
+{{- if eq .chezmoi.hostname "AMP-8060" "AMP-7050"}}
 export JIRA_API_TOKEN={{ (bitwarden "item" "ampcontrol_jira-api-token").notes }}
 {{- end}}
 
