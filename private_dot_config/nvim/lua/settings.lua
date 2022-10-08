@@ -45,7 +45,7 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHo
 })
 
 -- Remeber Cursor Position
-require'nvim-lastplace'.setup {}
+require("nvim-lastplace").setup({})
 
 -- Filetype Settings
 vim.api.nvim_create_autocmd("FileType", {
@@ -105,7 +105,8 @@ vim.api.nvim_set_keymap("n", "[g", ":Gitsigns prev_hunk<CR>", { noremap = true }
 vim.api.nvim_set_keymap("n", "]g", ":Gitsigns next_hunk<CR>", { noremap = true })
 ---- Telescope
 vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope git_files<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>F", ":Telescope grep_string<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>F", ":Telescope live_grep<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>s", ":Telescope grep_string<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>b", ":Telescope buffers<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>h", ":Telescope help_tags<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>B", ":Telescope current_buffer_fuzzy_find<CR>", { noremap = true })
