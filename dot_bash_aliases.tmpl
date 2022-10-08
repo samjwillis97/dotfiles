@@ -15,6 +15,7 @@ alias untar='tar -zxvf'
 alias python='python3'
 alias pip='pip3'
 
+alias tmuxx='tmux'
 alias tmux='tmux new-session -A -s default'
 
 alias count-file-watchers='find /proc/*/fd -user "$USER" -lname anon_inode:inotify -printf "%hinfo/%f\n" 2>/dev/null | xargs cat | grep -c "^inotify"'
