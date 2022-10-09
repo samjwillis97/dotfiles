@@ -7,19 +7,27 @@ vim.opt.updatetime = 50
 vim.opt.shortmess:append("c") -- Why??
 
 -- Swap Files
-vim.opt.swapfile = true
+vim.opt.swapfile = false
 vim.opt.dir = "/tmp"
+
+-- Backup Files
+vim.opt.backup = false
+
+-- Undo Files
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
 
 -- User Interface
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
-vim.opt.cmdheight = 2
+vim.opt.cmdheight = 1
 vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
 vim.opt.lazyredraw = true -- Why?
 -- vim.opt.showmatch = true -- Why?
 vim.opt.termguicolors = true
+vim.opt.colorcolumn = "120"
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -85,6 +93,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
 vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true })
 
 -- Normal Mode Remaps
+---- TMUX Sessionizer - overwrites full page down
+vim.api.nvim_set_keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 ---- Clear search highlights
 vim.api.nvim_set_keymap("n", "<leader><space>", ":nohlsearch<CR>", {})
 ---- Reload VIMRC
