@@ -94,7 +94,7 @@ vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true })
 
 -- Normal Mode Remaps
 ---- TMUX Sessionizer - overwrites full page down
-vim.api.nvim_set_keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.api.nvim_set_keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", {})
 ---- Clear search highlights
 vim.api.nvim_set_keymap("n", "<leader><space>", ":nohlsearch<CR>", {})
 ---- Reload VIMRC
