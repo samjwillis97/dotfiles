@@ -16,12 +16,6 @@
 	exact = true
 	stripComponents = 1
 	refreshPeriod = "168h"
-[".tmux/plugins/tpm"]
-	type = "archive"
-	url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
-	exact = true
-	stripComponents = 1
-	refreshPeriod = "168h"
 {{ $arch := "x86_64"}}
 {{- if eq .chezmoi.arch "arm64" "armv6" "i386" "x86_64" }}
 {{ $arch := .chezmoi.arch }}
