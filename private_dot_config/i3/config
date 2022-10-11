@@ -239,7 +239,7 @@ client.background       #F8F8F2
 bar {
         font pango:FiraCode Nerd Font Mono 8
         position top
-        status_command i3status-rs
+        status_command i3status
         colors {
                 background #282A36
                 statusline #F8F8F2
