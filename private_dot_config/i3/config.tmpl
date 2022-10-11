@@ -62,7 +62,6 @@ bindsym $mod+Shift+q kill
 bindsym Print exec flameshot gui
 
 # Start Rofi
-{{ if eq .chezmoi.hostname "debian-desktop" -}}
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+Tab exec --no-startup-id rofi -show
 
@@ -71,18 +70,6 @@ mode "rofi" {
         bindsym f exec --no-startup-id rofi -show file-browser
         bindsym c exec --no-startup-id rofi -show calc
         bindsym p exec --no-startup-id rofi-pass -show
-
-{{ else if eq .chezmoi.hostname "debian-xps-9550" -}}
-bindsym $mod+d exec --no-startup-id rofi -dpi 177 -show drun
-bindsym $mod+Tab exec --no-startup-id rofi -dpi 177 -show
-
-mode "rofi" {
-        bindsym s exec --no-startup-id rofi -dpi 177 -show ssh
-        bindsym f exec --no-startup-id rofi -dpi 177 -show file-browser
-        bindsym c exec --no-startup-id rofi -dpi 177 -show calc
-        bindsym p exec --no-startup-id rofi-pass -dpi 177 -show
-
-{{ end -}}
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
