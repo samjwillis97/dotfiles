@@ -20,22 +20,7 @@ alias pip='pip3'
 
 alias count-file-watchers='find /proc/*/fd -user "$USER" -lname anon_inode:inotify -printf "%hinfo/%f\n" 2>/dev/null | xargs cat | grep -c "^inotify"'
 
-{{- if eq .chezmoi.hostname "debian-xps-9550"}}
-gsettings set org.gnome.gnome-flashback desktop false
-export GOPATH=$HOME/Go
-{{- else if eq .chezmoi.hostname "debian-desktop"}}
 export GOPATH=$HOME/go
-{{- else if eq .chezmoi.hostname "AMP-6537"}}
-export GOPATH=$HOME/go
-export PATH="/usr/local/go/bin:$PATH"
-{{- else if eq .chezmoi.hostname "AMP-8060"}}
-# export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
-export DISPLAY=localhost:10.0
-# export LIBGL_ALWAYS_INDIRECT=1
-export GOPATH=$HOME/go
-{{- else }}
-export GOPATH=$HOME/go
-{{- end}}
 
 # Node Version Manager
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -48,6 +33,7 @@ export PATH="$GOPATH:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 {{- if eq .chezmoi.hostname "AMP-8060" "AMP-7050"}}
 export JIRA_API_TOKEN={{ (bitwarden "item" "ampcontrol_jira-api-token").notes }}
@@ -55,6 +41,5 @@ export JIRA_API_TOKEN={{ (bitwarden "item" "ampcontrol_jira-api-token").notes }}
 
 # Jira CLI
 alias jira-current="jira sprint list --current -a$(jira me)"
-
 
 export EDITOR=nvim
