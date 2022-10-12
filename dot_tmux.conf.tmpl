@@ -1,4 +1,3 @@
-
 # Better Splitting
 bind | split-window -h -c "#{pane_current_path}"
 bind - split-window -v -c "#{pane_current_path}"
@@ -28,6 +27,7 @@ bind -T copy-mode-vi v send-keys -X begin-selection
 bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 
 # Better Resizing
+###
 
 # Better sessions
 bind-key -r f run-shell "tmux neww ~/.local/bin/tmux-sessionizer"
@@ -35,29 +35,34 @@ bind-key -r f run-shell "tmux neww ~/.local/bin/tmux-sessionizer"
 # Enabled 256 COlor
 set -g default-terminal "screen-256color"
 set-option -ga terminal-overrides ",xterm-256color:Tc"
+set-option -ga terminal-overrides ",alacritty:Tc"
 
 # Enable scrolling
 set -g mouse on
 
+# Fix switching delay
+set -sg escape-time 0
+
 # easy reload
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
-# Plugins
-run -b '~/.tmux/plugins/tpm/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-# set -g @plugin 'christoomey/vim-tmux-navigator'
+# status bar
+set-option -g status-position bottom
+set-option -g status-left '#[bg=colour63,fg=colour229,bold] #S '
+set-option -g status-left-length 40
+set-option -g status-right ' #[fg=colour240]#T  #[fg=colour238]%d %b %Y %l:%M%p '
+set-option -g status-right-length 80
+set-option -g status-bg colour235
+set-option -g status-fg colour241
 
-# Powerline
-run-shell "powerline-daemon -q"
+# Default window title colors
+set-window-option -g window-status-format ' #I #W #F '
 
-{{- if eq .chezmoi.hostname "tifc" "AMP-6537"}}
-source "/home/$USER/.local/lib/python3.8/site-packages/powerline/bindings/tmux/powerline.conf"
-{{- else if eq .chezmoi.os "darwin"}}
-source "/$HOME/Library/Python/3.8/lib/python/site-packages/powerline/bindings/tmux/powerline.conf"
-{{- else }}
-source "/home/$USER/.local/pipx/venvs/powerline-status/lib/python3.*/site-packages/powerline/bindings/tmux/powerline.conf"
-{{- end }}
+set-window-option -g window-status-current-format '#[bg=colour211,fg=colour231] #I #W #F '
+set-option -g pane-border-style 'fg=colour238'
+set-option -g pane-active-border-style 'fg=colour63'
 
-# Keep at bottom
-run -b '~/.tmux/plugins/tpm/tpm'
+# Pane number display
+set-option -g display-panes-active-colour colour33
+set-option -g display-panes-colour colour166
+

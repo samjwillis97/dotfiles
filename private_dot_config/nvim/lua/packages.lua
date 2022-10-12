@@ -61,6 +61,8 @@ return require('packer').startup(function(use)
     use 'hrsh7th/vim-vsnip'
     -- Outline
     use 'simrat39/symbols-outline.nvim' -- Maybe fix some bindings?
+    -- -- Keep Cursor in the same place
+    -- use 'zhimsel/vim-stay'
     -- -- DAP (Debug Adapter Protocol)
     -- use 'mfussenegger/nvim-dap'
     -- use 'rcarriga/nvim-dap-ui'

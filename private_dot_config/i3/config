@@ -53,6 +53,9 @@ set $refresh_i3status killall -SIGUSR1 i3status
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Focus follows the mouse cursor
+focus_follows_mouse no
+
 # start a terminal
 bindsym $mod+Return exec alacritty
 
@@ -62,27 +65,14 @@ bindsym $mod+Shift+q kill
 bindsym Print exec flameshot gui
 
 # Start Rofi
-{{ if eq .chezmoi.hostname "debian-desktop" -}}
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+Tab exec --no-startup-id rofi -show
 
-mode "rofi" {
-        bindsym s exec --no-startup-id rofi -show ssh
-        bindsym f exec --no-startup-id rofi -show file-browser
-        bindsym c exec --no-startup-id rofi -show calc
-        bindsym p exec --no-startup-id rofi-pass -show
-
-{{ else if eq .chezmoi.hostname "debian-xps-9550" -}}
-bindsym $mod+d exec --no-startup-id rofi -dpi 177 -show drun
-bindsym $mod+Tab exec --no-startup-id rofi -dpi 177 -show
-
-mode "rofi" {
-        bindsym s exec --no-startup-id rofi -dpi 177 -show ssh
-        bindsym f exec --no-startup-id rofi -dpi 177 -show file-browser
-        bindsym c exec --no-startup-id rofi -dpi 177 -show calc
-        bindsym p exec --no-startup-id rofi-pass -dpi 177 -show
-
-{{ end -}}
+set $rofi_mode ROFI: [s]sh, [f]ile-browser, [c]alc
+mode "$rofi_mode" {
+        bindsym s exec --no-startup-id rofi -show ssh, mode default
+        bindsym f exec --no-startup-id rofi -show file-browser, mode default
+        bindsym c exec --no-startup-id rofi -show calc, mode default
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -90,7 +80,7 @@ mode "rofi" {
         bindsym $mod+p mode "default"
 }
 
-bindsym $mod+p mode "rofi"
+bindsym $mod+p mode "$rofi_mode"
 
 # change focus
 bindsym $mod+h focus left
@@ -187,6 +177,10 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -197,7 +191,8 @@ bindsym $mod+Shift+Control+l exec "dbus-send --type=method_call --dest=org.gnome
 bindsym $mod+Shift+Control+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
+set $resize_mode  : [h]  , [j]  , [k]  , [l] 
+mode "$resize_mode" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -221,7 +216,7 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "$resize_mode"
 
 # Handling Floating Windows
 for_window [window_role="pop-up"] floating enable
@@ -252,7 +247,7 @@ client.background       #F8F8F2
 bar {
         font pango:FiraCode Nerd Font Mono 8
         position top
-        status_command i3status-rs
+        status_command i3status
         colors {
                 background #282A36
                 statusline #F8F8F2
