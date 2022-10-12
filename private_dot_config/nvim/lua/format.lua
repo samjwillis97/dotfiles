@@ -7,7 +7,7 @@ local util = require("formatter.util")
 local formatGroup = vim.api.nvim_create_augroup("FormatAutogroup", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
 	command = "FormatWrite",
-	callback = function() end,
+	-- callback = function() end,
 	pattern = "*",
 	group = formatGroup,
 })
