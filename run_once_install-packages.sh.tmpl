@@ -1,10 +1,18 @@
 {{ if eq .chezmoi.os "linux" -}}
-
-{{ if eq .chezmoi.osRelease.id "debian" "ubuntu" -}}
 #!/bin/sh
 
+{{ if eq .chezmoi.osRelease.id "debian" "ubuntu" -}}
+
 # Install Essentials
-sudo apt install vim tmux zsh curl git pipx gcc make g++ ripgrep direnv fd-find
+sudo apt install tmux zsh curl git pipx gcc make g++ ripgrep direnv fd-find
+
+# NeoVIM Latest
+wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb -O /tmp/nvim.deb
+sudo apt install /tmp/nvim.deb
+
+{{ else if eq .chezmoi.osRelease.id "fedora" - }}
+sudo yum install neovim tmux zsh curl git pipx gcc make g++ ripgrep direnv fd-find
+{{ end -}}
 
 # Install Fonts
 mkdir -p ~/.local/share/fonts
@@ -18,14 +26,5 @@ nvm install node
 
 # Bitwarden CLI
 npm install -g @bitwarden/cli
-
-# Install powerline
-pipx install powerline-status > /dev/null 2>&1
-
-# NeoVIM Latest
-wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb -O /tmp/nvim.deb
-sudo apt install /tmp/nvim.deb
-
-{{ end -}}
 
 {{ end -}}
