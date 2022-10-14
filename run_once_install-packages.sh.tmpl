@@ -11,7 +11,7 @@ wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb 
 sudo apt install /tmp/nvim.deb
 
 {{ else if eq .chezmoi.osRelease.id "fedora" - }}
-sudo yum install neovim tmux zsh curl git pipx gcc make g++ ripgrep direnv fd-find
+sudo dnf install neovim tmux zsh curl git pipx gcc make g++ ripgrep direnv fd-find rofi alacritty
 {{ end -}}
 
 # Install Fonts
