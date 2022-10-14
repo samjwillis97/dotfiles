@@ -10,7 +10,7 @@ sudo apt install tmux zsh curl git pipx gcc make g++ ripgrep direnv fd-find
 wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb -O /tmp/nvim.deb
 sudo apt install /tmp/nvim.deb
 
-{{ else if eq .chezmoi.osRelease.id "fedora" - }}
+{{ else if eq .chezmoi.osRelease.id "fedora" -}}
 sudo dnf install neovim tmux zsh curl git pipx gcc make g++ ripgrep direnv fd-find rofi alacritty
 {{ end -}}
 
