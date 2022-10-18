@@ -239,8 +239,55 @@ for_window [window_role="PictureInPicture"] sticky enable
 # Removes Window Borders
 for_window [class=".*"] border pixel 2
 
-gaps inner 15
-# gaps outer current minus 5
+set $gap_inner 15
+set $gap_outer -15
+
+# TODO: See if this is right
+gaps inner $gap_inner
+# gaps outer $gap_outer
+
+set $gaps_mode GAPS: [o]n, of[f], [i]nner, [o]uter
+mode "$gaps_mode" {
+        bindsym o gaps inner all set $gap_inner, gaps outer all set $gaps_outer, mode "default"
+        bindsym f gaps inner all set 0, gaps outer all set 0, mode "default"
+        bindsym i mode "$inner_gaps_mode"
+        bindsym o mode "$outer_gaps_mode"
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+g mode "default"
+}
+
+set $inner_gaps_mode INNER: [+] add, [-] minus, [0] off - [Shift] modifier, all
+mode "$inner_gaps_mode" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "$gaps_mode"
+        bindsym Escape mode "default"
+}
+
+set $outer_gaps_mode INNER: [+] add, [-] minus, [0] off - [Shift] modifier, all
+mode "$outer_gaps_mode" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "$gaps_mode"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+g mode "$gaps_mode"
 
 
 # Dracula Theme
