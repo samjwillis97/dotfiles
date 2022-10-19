@@ -1,3 +1,6 @@
+configuration {
+    modes: "window,drun,run,ssh,filebrowser"
+}
 
 /*******************************************************************************
  * ROFI Color theme
