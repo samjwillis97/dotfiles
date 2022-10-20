@@ -13,6 +13,8 @@
     cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 [merge]
 	tool = fugitive 
+[push]
+    autoSetupRemote = true
 [alias]
 	lg = lg1
 	lg1 = lg1-specific --all
