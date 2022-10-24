@@ -111,6 +111,37 @@ require("lspconfig")["angularls"].setup({
 	flags = lsp_flags,
 	capabilities = capabilities,
 })
+require("lspconfig")["omnisharp"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+	cmd = { "omnisharp" },
+})
+require("lspconfig")["bashls"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+})
+require("lspconfig")["yamlls"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+})
+require("lspconfig")["jsonls"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+})
+require("lspconfig")["cssls"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+})
+require("lspconfig")["tailwindcss"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+})
 require("lspconfig")["rust_analyzer"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
