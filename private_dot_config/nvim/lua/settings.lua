@@ -104,6 +104,11 @@ vim.api.nvim_set_keymap("n", "<C-J>", "<C-W><C-J>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-K>", "<C-W><C-K>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-L>", "<C-W><C-L>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-H>", "<C-W><C-H>", { noremap = true })
+---- Centering after jumps
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-i>", "<C-i>zz", { noremap = true })
+vim.api.nvim_set_keymap("n", "n", "nzz", { noremap = true })
+vim.api.nvim_set_keymap("n", "GG", "GGzz", { noremap = true })
 ---- Navigate by visual lines
 vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true })
 vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true })
