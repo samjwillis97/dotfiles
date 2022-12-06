@@ -5,6 +5,7 @@ require("filetree")
 require("statusline")
 require("telescope-settings")
 require("neogit-settings")
+require("outline")
 -- require("debugger")
 require("format")
 require("settings")
@@ -17,5 +18,5 @@ require("settings")
 
 vim.g.catppuccin_flavour = "macchiato"
 require("catppuccin").setup()
-vim.cmd [[colorscheme catppuccin]]
-require'colorizer'.setup()
+vim.cmd([[colorscheme catppuccin]])
+require("colorizer").setup()
