@@ -37,9 +37,12 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
-{{- if eq .chezmoi.hostname "AMP-8060" "AMP-7050"}}
-export JIRA_API_TOKEN={{ (bitwarden "item" "ampcontrol_jira-api-token").notes }}
-{{- end}}
+if command -v bw &> /dev/null
+then
+    export JIRA_API_TOKEN={{ (bitwarden "item" "ampcontrol_jira-api-token").notes }}
+    export PUSH_OVER_USER_KEY ={{ (bitwarden "item" "push_over_user_key").notes }}
+    export PUSH_OVER_API_KEY ={{ (bitwarden "item" "push_over_api_key").notes }}
+fi
 
 # Jira CLI
 alias jira-current="jira sprint list --current -a$(jira me)"
