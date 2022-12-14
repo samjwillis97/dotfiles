@@ -1,8 +1,8 @@
 local dap = require("dap")
 dap.adapters.firefox = {
 	type = "executable",
-	command = "firefox-debug-adapter",
-	-- args = { os.getenv("HOME") .. "/path/to/vscode-firefox-debug/dist/adapter.bundle.js" },
+	command = "node",
+	args = { os.getenv("HOME") .. "/.local/share/nvim/mason/packages/firefox-debug-adapter/dist/adapter.bundle.js" },
 }
 
 dap.configurations.typescript = {
