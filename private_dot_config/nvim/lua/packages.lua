@@ -82,9 +82,9 @@ return require("packer").startup(function(use)
 	-- -- Keep Cursor in the same place
 	-- use 'zhimsel/vim-stay'
 	-- -- DAP (Debug Adapter Protocol)
-	-- use 'mfussenegger/nvim-dap'
-	-- use 'rcarriga/nvim-dap-ui'
-	-- use 'theHamsta/nvim-dap-virtual-text'
+	use("mfussenegger/nvim-dap")
+	use("rcarriga/nvim-dap-ui")
+	use("theHamsta/nvim-dap-virtual-text")
 	-- -- Fancy Lines
 	use("lukas-reineke/indent-blankline.nvim")
 	-- -- Cursor
