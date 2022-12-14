@@ -6,11 +6,13 @@ dap.adapters.firefox = {
 }
 
 dap.configurations.typescript = {
-	name = "Debug with Firefox",
-	type = "firefox",
-	request = "launch",
-	reAttach = true,
-	url = "http://localhost:4200",
-	webRoot = "${workspaceFolder}",
-	firefoxExecutable = "/usr/bin/firefox",
+	{
+		name = "Debug with Firefox",
+		type = "firefox",
+		request = "launch",
+		reAttach = true,
+		url = "http://localhost:4200",
+		webRoot = "${workspaceFolder}",
+		firefoxExecutable = "/usr/bin/firefox",
+	},
 }
