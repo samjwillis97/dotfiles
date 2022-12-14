@@ -6,7 +6,7 @@ require("statusline")
 require("telescope-settings")
 require("neogit-settings")
 require("outline")
--- require("debugger")
+require("debugger")
 require("format")
 require("settings")
 
