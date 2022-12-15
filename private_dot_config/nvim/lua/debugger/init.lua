@@ -6,30 +6,40 @@ require("nvim-dap-virtual-text").setup({
 
 -- require('debugger.go')
 require("debugger.node")
--- require("debugger.js-firefox")
 
 dapui.setup({
-	layouts = {
-		{
-			elements = {
-				"console",
-			},
-			size = 7,
-			position = "bottom",
-		},
-		{
-			elements = {
-				-- Elements can be strings or table with id and size keys.
-				{ id = "scopes", size = 0.25 },
-				"watches",
-			},
-			size = 40,
-			position = "left",
-		},
-	},
 	mappings = {
 		open = { "zo" },
 		close = { "zc" },
+		remove = "d",
+		edit = "e",
+		repl = "r",
+		toggle = "t",
+	},
+	layouts = {
+		{
+			elements = {
+				-- Elements can be strings or table with id and size keys.
+				{ id = "scopes", size = 0.5 },
+				"breakpoints",
+				"watches",
+				"stacks",
+			},
+			size = 50, -- 50 columns
+			position = "left",
+		},
+		{
+			elements = {
+				"repl",
+				"console",
+			},
+			size = 0.25, -- 25% of total lines
+			position = "bottom",
+		},
+	},
+	controls = {
+		enabled = true,
+		elements = "repl",
 	},
 })
 
