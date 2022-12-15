@@ -5,8 +5,8 @@ require("nvim-dap-virtual-text").setup({
 })
 
 -- require('debugger.go')
--- require("debugger.node")
-require("debugger.js-firefox")
+require("debugger.node")
+-- require("debugger.js-firefox")
 
 dapui.setup({
 	layouts = {
