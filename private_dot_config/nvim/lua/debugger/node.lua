@@ -4,6 +4,13 @@ dap.adapters.node2 = {
 	command = "node",
 	args = { os.getenv("HOME") .. "/.local/share/nvim/mason/packages/node-debug2-adapter/out/src/nodeDebug.js" },
 }
+
+dap.adapters.firefox = {
+	type = "executable",
+	command = "node",
+	args = { os.getenv("HOME") .. "/.local/share/nvim/mason/packages/firefox-debug-adapter/dist/adapter.bundle.js" },
+}
+
 dap.configurations.typescript = {
 	{
 		name = "Launch",
@@ -21,5 +28,14 @@ dap.configurations.typescript = {
 		type = "node2",
 		request = "attach",
 		processId = require("dap.utils").pick_process,
+	},
+	{
+		name = "Debug with Firefox",
+		type = "firefox",
+		request = "launch",
+		reAttach = true,
+		url = "http://localhost:4200",
+		webRoot = "${workspaceFolder}",
+		firefoxExecutable = "/usr/bin/firefox",
 	},
 }

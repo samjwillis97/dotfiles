@@ -3,9 +3,9 @@ local dapui = require("dapui")
 require("nvim-dap-virtual-text").setup({
 	-- commented = true,
 })
---
+
 -- require('debugger.go')
-require("debugger.node")
+-- require("debugger.node")
 require("debugger.js-firefox")
 
 dapui.setup({
