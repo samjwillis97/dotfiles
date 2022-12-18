@@ -2,12 +2,14 @@ local dap = require("dap")
 dap.adapters.node2 = {
 	type = "executable",
 	command = "node",
+	-- Assuming this is installed via Mason
 	args = { os.getenv("HOME") .. "/.local/share/nvim/mason/packages/node-debug2-adapter/out/src/nodeDebug.js" },
 }
 
 dap.adapters.firefox = {
 	type = "executable",
 	command = "node",
+	-- Assuming this is installed via Mason
 	args = { os.getenv("HOME") .. "/.local/share/nvim/mason/packages/firefox-debug-adapter/dist/adapter.bundle.js" },
 }
 
