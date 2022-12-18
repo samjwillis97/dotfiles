@@ -7,6 +7,8 @@ require("nvim-dap-virtual-text").setup({
 require("debugger.python")
 require("debugger.go")
 require("debugger.node")
+require("debugger.dotnet")
+-- require("debugger.rust")
 
 dapui.setup({
 	mappings = {
