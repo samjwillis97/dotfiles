@@ -4,7 +4,7 @@ dap.adapters.delve = {
 	type = "server",
 	port = "${port}",
 	executable = {
-		command = "dlv",
+		command = { os.getenv("HOME") .. "/.local/share/nvim/mason/packages/delve/dlv" },
 		args = { "dap", "-l", "127.0.0.1:${port}" },
 	},
 }
