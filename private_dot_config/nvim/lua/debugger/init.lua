@@ -4,7 +4,8 @@ require("nvim-dap-virtual-text").setup({
 	-- commented = true,
 })
 
--- require('debugger.go')
+require("debugger.python")
+require("debugger.go")
 require("debugger.node")
 
 dapui.setup({
