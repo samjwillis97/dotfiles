@@ -66,6 +66,7 @@ return require("packer").startup(function(use)
 	use("ThePrimeagen/harpoon")
 	-- Language Server Protocol
 	use("neovim/nvim-lspconfig")
+	use("williamboman/mason-lspconfig.nvim") -- Auto LSP Installs
 	use("williamboman/mason.nvim") -- Auto LSP Installs
 	-- Language Server Protocol with Completion
 	use("hrsh7th/cmp-nvim-lsp")

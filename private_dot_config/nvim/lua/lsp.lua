@@ -1,7 +1,43 @@
-require("mason").setup()
 require("symbols-outline").setup()
+require("mason").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"pyright",
+		"tsserver",
+		"eslint",
+		"gopls",
+		"golangci_lint_ls",
+		"svelte",
+		"angularls",
+		"omnisharp",
+		"bashls",
+		"yamlls",
+		"jsonls",
+		"cssls",
+		"rnix",
+		"rust_analyzer",
+	},
+})
+
 local cmp = require("cmp")
 local lspkind = require("lspkind")
+
+local lsp_flags = {
+	-- This is the default in Nvim 0.7+
+	debounce_text_changes = 150,
+}
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+local lspconfig = require("lspconfig")
+require("mason-lspconfig").setup_handlers({
+	function(server_name)
+		lspconfig[server_name].setup({
+			on_attach = lsp_attach,
+			flags = lsp_flags,
+			capabilities = capabilities,
+		})
+	end,
+})
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -68,93 +104,6 @@ cmp.setup({
 	}, {
 		{ name = "buffer" },
 	}),
-})
-
-local lsp_flags = {
-	-- This is the default in Nvim 0.7+
-	debounce_text_changes = 150,
-}
-local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-require("lspconfig")["pyright"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig")["tsserver"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig")["eslint"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig")["gopls"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig")["golangci_lint_ls"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig")["svelte"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig")["angularls"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig")["omnisharp"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-	cmd = { "omnisharp" },
-})
-require("lspconfig")["bashls"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig")["yamlls"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig")["jsonls"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig")["cssls"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig")["tailwindcss"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig")["rnix"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig")["rust_analyzer"].setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-	-- Server-specific settings...
-	settings = {
-		["rust-analyzer"] = {},
-	},
 })
 
 -- Set configuration for specific filetype.
