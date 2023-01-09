@@ -21,6 +21,33 @@ require("mason-lspconfig").setup({
 
 local cmp = require("cmp")
 local lspkind = require("lspkind")
+
+-- Window Styling
+local border = {
+	{ "🭽", "FloatBorder" },
+	{ "▔", "FloatBorder" },
+	{ "🭾", "FloatBorder" },
+	{ "▕", "FloatBorder" },
+	{ "🭿", "FloatBorder" },
+	{ "▁", "FloatBorder" },
+	{ "🭼", "FloatBorder" },
+	{ "▏", "FloatBorder" },
+}
+
+-- LSP settings (for overriding per client)
+-- local handlers = {
+-- 	["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+-- 	["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+-- }
+
+-- To instead override globally
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+	opts = opts or {}
+	opts.border = opts.border or border
+	return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -101,6 +128,7 @@ require("mason-lspconfig").setup_handlers({
 			on_attach = on_attach,
 			flags = lsp_flags,
 			capabilities = capabilities,
+			-- handlers = handlers,
 		})
 	end,
 })
