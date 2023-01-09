@@ -87,6 +87,15 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	end,
 })
 
+-- Window Borders
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = "single",
+})
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	border = "single",
+})
+
 -- Reopening A File - at same line (TODO)
 
 -- Insert Mode Remaps
