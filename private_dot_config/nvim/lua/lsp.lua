@@ -21,24 +21,6 @@ require("mason-lspconfig").setup({
 
 local cmp = require("cmp")
 local lspkind = require("lspkind")
-
-local lsp_flags = {
-	-- This is the default in Nvim 0.7+
-	debounce_text_changes = 150,
-}
-local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-local lspconfig = require("lspconfig")
-require("mason-lspconfig").setup_handlers({
-	function(server_name)
-		lspconfig[server_name].setup({
-			on_attach = lsp_attach,
-			flags = lsp_flags,
-			capabilities = capabilities,
-		})
-	end,
-})
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -106,6 +88,22 @@ cmp.setup({
 	}),
 })
 
+local lsp_flags = {
+	-- This is the default in Nvim 0.7+
+	debounce_text_changes = 150,
+}
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+local lspconfig = require("lspconfig")
+require("mason-lspconfig").setup_handlers({
+	function(server_name)
+		lspconfig[server_name].setup({
+			on_attach = lsp_attach,
+			flags = lsp_flags,
+			capabilities = capabilities,
+		})
+	end,
+})
 -- Set configuration for specific filetype.
 cmp.setup.filetype("gitcommit", {
 	sources = cmp.config.sources({
