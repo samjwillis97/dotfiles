@@ -16,6 +16,9 @@ require("mason-lspconfig").setup({
 		"cssls",
 		"rnix",
 		"rust_analyzer",
+		"netcoredbg",
+		"prettier",
+		"black",
 	},
 })
 
