@@ -29,6 +29,9 @@ require("formatter").setup({
 				}
 			end,
 		},
+		cs = {
+			require("formatter.filetypes.cs").dotnetformat,
+		},
 		typescript = {
 			require("formatter.filetypes.typescript").prettier,
 		},
