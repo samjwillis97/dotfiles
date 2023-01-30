@@ -35,14 +35,14 @@ require("nvim-tree").setup({
 				{ key = "H", action = "collapse_all", action_cb = collapse_all },
 			},
 		},
-		actions = {
-			open_file = {
-				quit_on_open = false,
-			},
-		},
 		width = function()
 			return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
 		end,
+	},
+	actions = {
+		open_file = {
+			quit_on_open = false,
+		},
 	},
 	renderer = {
 		group_empty = true,
